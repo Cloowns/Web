@@ -1,0 +1,753 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(174, 255, 0, 0.035),
+            transparent 30%
+        ),
+        #05090d;
+
+    color: #f1f1f1;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 42px 35px 60px;
+}
+
+
+/* =========================================
+   TOMBOL KEMBALI
+========================================= */
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 23px;
+
+    border-radius: 40px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 29, 35, 0.95),
+            rgba(8, 12, 16, 0.95)
+        );
+
+    border: 1px solid rgba(178, 255, 0, 0.3);
+
+    box-shadow:
+        0 0 20px rgba(178, 255, 0, 0.08),
+        inset 0 0 15px rgba(255, 255, 255, 0.015);
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: #b7ff39;
+
+    border-color: #b7ff39;
+
+    transform: translateX(-4px);
+
+    box-shadow:
+        0 0 25px rgba(178, 255, 0, 0.25);
+}
+
+.back-icon {
+    color: #b7ff39;
+    font-size: 30px;
+    line-height: 15px;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.detail-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(400px, 510px)
+        minmax(500px, 1fr);
+
+    gap: 48px;
+
+    align-items: start;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.photo-section {
+    width: 100%;
+
+    position: sticky;
+    top: 30px;
+}
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 0.72;
+
+    padding: 9px;
+
+    border-radius: 23px;
+
+    border: 1.5px solid #b7ff39;
+
+    background: #070b0e;
+
+    box-shadow:
+        0 0 18px rgba(183, 255, 57, 0.25),
+        0 0 50px rgba(183, 255, 57, 0.08);
+
+    overflow: hidden;
+}
+
+.photo-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 20px;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.55);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.information-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.info-card {
+    padding: 22px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 24, 29, 0.88),
+            rgba(7, 11, 15, 0.88)
+        );
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: rgba(183, 255, 57, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.card-title h2 {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #f2f2f2;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.icon {
+    width: 38px;
+    height: 38px;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    color: #b7ff39;
+}
+
+
+/* User icon */
+
+.user-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border: 3px solid #b7ff39;
+
+    border-radius: 50%;
+
+    top: 1px;
+    left: 11px;
+}
+
+.user-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 13px;
+
+    border: 3px solid #b7ff39;
+
+    border-bottom: 0;
+
+    border-radius: 15px 15px 0 0;
+
+    bottom: 1px;
+    left: 6px;
+}
+
+
+/* Chat icon */
+
+.chat-icon {
+    border: 3px solid #b7ff39;
+
+    width: 29px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    margin-left: 3px;
+}
+
+.chat-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-left: 3px solid #b7ff39;
+    border-bottom: 3px solid #b7ff39;
+
+    bottom: -5px;
+    left: 4px;
+
+    transform: skew(-20deg);
+}
+
+
+/* Graduation icon */
+
+.graduation-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 15px;
+
+    background: transparent;
+
+    border: 3px solid #b7ff39;
+
+    transform: rotate(0deg) skewX(-25deg);
+
+    top: 6px;
+    left: 5px;
+}
+
+.graduation-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 13px;
+
+    background: #b7ff39;
+
+    top: 19px;
+    left: 19px;
+
+    box-shadow:
+        5px 4px 0 -1px #b7ff39;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 26, 32, 0.85),
+            rgba(12, 17, 21, 0.8)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   NAMA
+========================================= */
+
+.name-content {
+    padding: 20px 58px;
+}
+
+.name-content h3 {
+    color: #b7ff39;
+
+    font-size: 23px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   KATA-KATA
+========================================= */
+
+.quote-list {
+    padding: 17px 28px 18px;
+}
+
+.quote-list ul {
+    list-style: none;
+}
+
+.quote-list li {
+    position: relative;
+
+    padding-left: 29px;
+
+    margin: 10px 0;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    color: #eeeeee;
+}
+
+.quote-list li::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: #b7ff39;
+
+    border-radius: 50%;
+
+    left: 2px;
+    top: 10px;
+
+    box-shadow:
+        0 0 8px rgba(183, 255, 57, 0.4);
+}
+
+
+/* =========================================
+   SETELAH LULUS
+========================================= */
+
+.graduation-content {
+    padding: 17px 28px;
+}
+
+.graduation-content p {
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #ededed;
+}
+
+
+/* =========================================
+   QUOTE UTAMA
+========================================= */
+
+.main-quote {
+    position: relative;
+
+    min-height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px 75px;
+
+    border-radius: 17px;
+
+    border: 1px solid rgba(183, 255, 57, 0.45);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 23, 27, 0.95),
+            rgba(7, 11, 14, 0.95)
+        );
+
+    box-shadow:
+        0 0 25px rgba(183, 255, 57, 0.08);
+}
+
+.main-quote p {
+    text-align: center;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color: #f0f0f0;
+
+    max-width: 800px;
+}
+
+.quote-mark {
+    position: absolute;
+
+    color: #b7ff39;
+
+    font-family: Georgia, serif;
+
+    font-size: 80px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 15px rgba(183, 255, 57, 0.2);
+}
+
+.quote-mark.left {
+    left: 31px;
+    top: 22px;
+}
+
+.quote-mark.right {
+    right: 31px;
+    bottom: 4px;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        padding: 30px 25px 50px;
+    }
+
+    .detail-layout {
+        grid-template-columns: 390px 1fr;
+
+        gap: 30px;
+    }
+
+    .card-title h2 {
+        font-size: 22px;
+    }
+
+    .quote-list li {
+        font-size: 17px;
+    }
+
+    .graduation-content p {
+        font-size: 18px;
+    }
+
+    .main-quote p {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE HP
+========================================= */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 25px 18px 40px;
+    }
+
+    .detail-layout {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        margin-top: 20px;
+    }
+
+    .photo-section {
+        position: relative;
+
+        width: 100%;
+
+        max-width: 500px;
+
+        margin: auto;
+    }
+
+    .photo-frame {
+        aspect-ratio: 0.72;
+    }
+
+    .information-section {
+        width: 100%;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+
+    .card-title {
+        gap: 14px;
+
+        margin-bottom: 15px;
+    }
+
+    .card-title h2 {
+        font-size: 21px;
+    }
+
+    .name-content {
+        padding: 17px 20px;
+    }
+
+    .name-content h3 {
+        font-size: 20px;
+    }
+
+    .quote-list {
+        padding: 12px 15px;
+    }
+
+    .quote-list li {
+        font-size: 16px;
+
+        padding-left: 23px;
+
+        margin: 9px 0;
+    }
+
+    .graduation-content {
+        padding: 15px 20px;
+    }
+
+    .graduation-content p {
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+    .main-quote {
+        padding: 35px 50px;
+    }
+
+    .main-quote p {
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+    .quote-mark {
+        font-size: 60px;
+    }
+
+    .quote-mark.left {
+        left: 15px;
+        top: 17px;
+    }
+
+    .quote-mark.right {
+        right: 15px;
+        bottom: 0;
+    }
+}
+
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 18px 13px 30px;
+    }
+
+    .back-button {
+        padding: 11px 18px;
+
+        font-size: 16px;
+    }
+
+    .back-icon {
+        font-size: 25px;
+    }
+
+    .photo-frame {
+        padding: 6px;
+
+        border-radius: 18px;
+    }
+
+    .photo-frame img {
+        border-radius: 12px;
+    }
+
+    .info-card {
+        border-radius: 15px;
+
+        padding: 15px;
+    }
+
+    .card-title h2 {
+        font-size: 19px;
+    }
+
+    .icon {
+        transform: scale(0.9);
+    }
+
+    .name-content h3 {
+        font-size: 18px;
+    }
+
+    .quote-list li {
+        font-size: 15px;
+
+        line-height: 1.45;
+    }
+
+    .graduation-content p {
+        font-size: 15px;
+    }
+
+    .main-quote {
+        min-height: 140px;
+
+        padding: 35px 35px;
+    }
+
+    .main-quote p {
+        font-size: 15px;
+    }
+
+    .quote-mark {
+        font-size: 50px;
+    }
+}
